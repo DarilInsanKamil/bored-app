@@ -9,7 +9,7 @@ const playd = Playfair_Display({
 
 export const metadata = {
   title: 'Bored App',
-  description: 'I make this when im bored and i will update if im get bored again hehe',
+  description: `I make this when i'm bored, and i will update this website when i'm bored again`,
 }
 
 export default function RootLayout({ children }) {
