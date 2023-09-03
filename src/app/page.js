@@ -1,6 +1,6 @@
 "use client"
 import styles from './page.module.css'
-import { useState } from 'react'
+import { Suspense, useState } from 'react'
 
 
 
@@ -9,13 +9,13 @@ export default function Home() {
   const handleButtonClick = (event) => {
     event.preventDefault();
     const fetchData = async () => {
-      const response = await fetch('http://www.boredapi.com/api/activity');
+      const response = await fetch('https://www.boredapi.com/api/activity');
       const data = await response.json();
       setData(data);
     };
     fetchData();
   };
-  
+
   return (
     <main className={styles.main}>
       <h1 className={styles.title}>
@@ -25,7 +25,7 @@ export default function Home() {
       <button className={styles.btn} onClick={handleButtonClick}>{data.length === 0 ? "Click Me" : "Try Again"}</button>
       <div className={styles.idea}>
         {
-          data&&<p>{data.activity}</p>
+          data && <Suspense fallback={<p>Wait a second...</p>}><p>{data.activity}</p></Suspense>
         }
       </div>
     </main>
