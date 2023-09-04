@@ -8,8 +8,7 @@ export default function Home() {
   const handleButtonClick = (event) => {
     event.preventDefault();
     const fetchData = async () => {
-      const URL = process.env.BORED_URL
-      const response = await fetch(URL);
+      const response = await fetch('https://www.boredapi.com/api/activity');
       const data = await response.json();
       setData(data);
     };
