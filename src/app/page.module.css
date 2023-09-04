@@ -39,20 +39,28 @@
     opacity: 0;
   }
   to {
-    height: 3rem;
+    height: 4rem;
     opacity: 1;
   }
 }
 .wo_idea {
+  height: 2rem;
+  width: 2rem;
   opacity: 0;
 }
 .idea {
   animation: fadeIn 1.5s;
-  height: 3rem;
+  height: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  font-family: var(--font-poppins);
+  padding: 20px;
+  border: 1px solid #efefef;
 }
-/* .idea p{
-  margin: 0.25rem 0rem ;
-} */
+.idea p{
+  margin: 0.5rem 0rem;
+}
 .btn:hover {
   background-color: #efefef;
   transition: all 0.2s ease-in-out;

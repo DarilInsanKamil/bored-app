@@ -1,13 +1,15 @@
 "use client"
+import { useState } from 'react';
 import styles from './page.module.css'
-import { Suspense, useState } from 'react'
 
 export default function Home() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState([])
+
   const handleButtonClick = (event) => {
     event.preventDefault();
     const fetchData = async () => {
-      const response = await fetch('https://www.boredapi.com/api/activity');
+      const URL = process.env.BORED_URL
+      const response = await fetch(URL);
       const data = await response.json();
       setData(data);
     };
@@ -22,7 +24,11 @@ export default function Home() {
       <p className={styles.sub_head}>press button below we will give you idea</p>
       <button className={styles.btn} onClick={handleButtonClick}>{data.length === 0 ? "Click Me" : "Try Again"}</button>
       {
-        data && <p className={data.length === 0 ? styles.wo_idea : styles.idea}>{data.activity}</p>
+        data && <div className={data.length === 0 ? styles.wo_idea : styles.idea}>
+          <p>maybe you can try:</p>
+          <p>{data.activity}</p>
+          <a href={data.link === '' ? '' : data.link}>{data.link}</a>
+        </div>
       }
     </main>
   )
