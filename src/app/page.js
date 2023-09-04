@@ -2,8 +2,6 @@
 import styles from './page.module.css'
 import { Suspense, useState } from 'react'
 
-
-
 export default function Home() {
   const [data, setData] = useState([]);
   const handleButtonClick = (event) => {
@@ -23,11 +21,9 @@ export default function Home() {
       </h1>
       <p className={styles.sub_head}>press button below we will give you idea</p>
       <button className={styles.btn} onClick={handleButtonClick}>{data.length === 0 ? "Click Me" : "Try Again"}</button>
-      <div className={styles.idea}>
-        {
-          data && <Suspense fallback={<p>Wait a second...</p>}><p>{data.activity}</p></Suspense>
-        }
-      </div>
+      {
+        data && <p className={data.length === 0 ? styles.wo_idea : styles.idea}>{data.activity}</p>
+      }
     </main>
   )
 }

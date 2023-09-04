@@ -28,15 +28,32 @@
   margin-top: 0.75rem;
 }
 .btn {
-  border: 1px solid #EFEFEF;
+  border: 1px solid #efefef;
   background-color: transparent;
   padding: 0.5rem 1.25rem;
   margin: 1.25rem 0rem;
 }
-.idea {
-  transition: all 0.5s ease-in-out;
+@keyframes fadeIn {
+  from {
+    height: 0rem;
+    opacity: 0;
+  }
+  to {
+    height: 3rem;
+    opacity: 1;
+  }
 }
-.btn:hover{
-  background-color: #EFEFEF;
+.wo_idea {
+  opacity: 0;
+}
+.idea {
+  animation: fadeIn 1.5s;
+  height: 3rem;
+}
+/* .idea p{
+  margin: 0.25rem 0rem ;
+} */
+.btn:hover {
+  background-color: #efefef;
   transition: all 0.2s ease-in-out;
 }
