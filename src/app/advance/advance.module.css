@@ -1,0 +1,13 @@
+.main::-webkit-scrollbar {
+    width: 0px;
+  }
+  .main {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    background-color: white;
+    font-family: var(--font-playd);
+    flex-direction: column;
+    align-items: center;
+    padding: 0px 20px;
+  }

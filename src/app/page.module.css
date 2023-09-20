@@ -35,28 +35,34 @@
 }
 @keyframes fadeIn {
   from {
-    height: 0rem;
     opacity: 0;
   }
   to {
-    height: 4rem;
     opacity: 1;
   }
 }
 .wo_idea {
-  height: 2rem;
-  width: 2rem;
+  height: fit-content;
+  width: fit-content;
   opacity: 0;
 }
 .idea {
-  animation: fadeIn 1.5s;
-  height: 4rem;
+  animation: fadeIn 0.5s linear;
   display: flex;
   justify-content: center;
   flex-direction: column;
   font-family: var(--font-poppins);
-  padding: 20px;
-  border: 1px solid #efefef;
+  margin-top: 10px;
+}
+.idea mark {
+  padding: 0.25rem;
+  font-size: 1.25rem;
+  margin: 0.25rem 0rem;
+} 
+.advance{
+  margin-top: 40px;
+  text-align: center;
+  text-decoration: none;
 }
 .idea p{
   margin: 0.5rem 0rem;
@@ -64,4 +70,35 @@
 .btn:hover {
   background-color: #efefef;
   transition: all 0.2s ease-in-out;
+}
+
+
+.loader {
+  margin-top: 0.75rem;
+  border: 4px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 4px solid #222;
+  width: 16px;
+  height: 16px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
