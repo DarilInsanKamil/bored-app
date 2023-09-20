@@ -32,7 +32,7 @@ export default function Home() {
         loading ? <p className={styles.loader}></p> : <div className={data.length === 0 ? styles.wo_idea : styles.idea}>
           <p>maybe you can try:</p>
           <mark>{data.activity}</mark>
-          <a href={data.link === '' ? '' : data.link}>{data.link}</a>
+          <a target='_blank' href={data.link === '' ? '' : data.link}>{data.link}</a>
           <div className={styles.advance}>
             <p>if you no satisfied try:</p>
             <Link href={'/advance'}>advance search</Link>
